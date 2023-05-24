@@ -14,15 +14,18 @@
 ### Links
 
 * <https://omarghader.github.io/jenkins-nodejs-configuration/>
+* <https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose>
   
 ### Steps
 
   1. Clone a git repo: <https://github.com/stasgm/docker-jenkins>
-  2. Generate ssh
+  2. Generate ssh:
      * In a terminal window run the command: `ssh-keygen -f ~/.ssh/jenkins_agent_key`
      * Provide a passphrase to use with the key (it can be empty)
   3. Inside your repo copy and rename **.env.sample** to **.env**
-  4. Open **.env** and put content of **~/.ssh/jenkins_agent_key.pub** after **JENKINS_AGENT_SSH_PUBKEY=**
+  4. Open **.env** and do the following:
+     * Copy content of **~/.ssh/jenkins_agent_key.pub** to **JENKINS_AGENT_SSH_PUBKEY=** variable
+     * Create a new local folder fo Jenkins data and the path to **LOCAL_JENKINS_DIR=** variable
   5. Run the command: `docker-compose up -d`
 
 ### Unlocking Jenkins
@@ -58,13 +61,13 @@
   2. Click the 'New node' button
   3. Fill the Node/agent name and select the type; (e.g. Name: agent-1, Type: Permanent Agent) click on the Create button
   4. Fill the form:
-     * Remote root directory; (e.g.: /home/jenkins )
-     * label; (e.g.: agent1 )
-     * Launch method; (e.g.: Launch agents by SSH )
-       * Host; (e.g.:  or your IP address )
-       * Credentials; (e.g.: jenkins )
+     * Remote root directory; (e.g.: /home/jenkins/agent-1 )
+     * label; (e.g.: agent-1 )
+     * Launch method; (e.g.: Launch agents by SSH)
+       * Host; (e.g.:  or your IP address)
+       * Credentials; (e.g.: jenkins)
        * Host Key verification Strategy; (e.g.: Manually trusted key verification …​ )
-  5. Press the Save button and the agent1 will be registered, but offline for the time being. Click on it.  
+  5. Press the Save button and the agent-1 will be registered, but offline for the time being. Click on it.  
 
 ---
 

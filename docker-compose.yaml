@@ -3,34 +3,37 @@ version: '3.9'
 services:
   jenkins-agent-1:
     container_name: agent1
+    privileged: true
+    user: root
     ports:
-      - '22:22'
+      - 22:22
     env_file:
       - .env
-    image: 'jenkins/ssh-agent:alpine'
+    image: jenkins/ssh-agent:alpine
     networks:
       jenkins-net:
         aliases:
           - docker
 
   jenkins:
-    image: 'jenkins/jenkins:lts'
-    container_name: 'jenkins-1'
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    privileged: true
+    user: root
     restart: always
     ports:
-      - '8080:8080'
-      - '50000:50000'
+      - 8080:8080
+      - 50000:50000
+    env_file:
+      - .env
     volumes:
-      - jenkins-data:/etc/gitlab
+      - ${LOCAL_JENKINS_DIR}:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       jenkins-net:
         aliases:
           - docker
 
-volumes:
-  jenkins-data:
-    name: jenkins-data
 networks:
   jenkins-net:
     name: jenkins-net
