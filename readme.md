@@ -72,8 +72,12 @@
 
 ### Links
 
-   * <https://plugins.jenkins.io/nodejs/>
+* <https://plugins.jenkins.io/nodejs/>
+* <https://gist.github.com/MethodGrab/1462c5fcfcd4f690add8>
+* <https://blog.devgenius.io/integrating-jenkins-with-a-nodejs-project-219d249b1fb2>
 
- ### Steps
+### Steps
 
-  1. Open Manage Jenkins => “Manage Plugins” and Install NodeJs Plugin and NPM Plugin.
+  1. Open <http://localhost:8080/manage/pluginManager/available> and Install NodeJS Plugin
+  2. Go to <http://localhost:8080/manage/configureTools> and scroll down to NodeJS settings
+  3. Press the **Add NodeJS** button, select the required NodeJS version and press the **Save** button
