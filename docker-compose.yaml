@@ -1,6 +1,18 @@
-version: '3.5'
+version: '3.9'
 
 services:
+  jenkins-agent-1:
+    container_name: agent1
+    ports:
+      - '22:22'
+    env_file:
+      - .env  
+    image: 'jenkins/ssh-agent:alpine'
+    networks:
+      jenkins-net:
+        aliases:
+          - docker
+
   jenkins:
     image: 'jenkins/jenkins:lts'
     container_name: 'jenkins-1'
@@ -13,6 +25,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       jenkins-net:
+        aliases:
+          - docker
 
 volumes:
   jenkins-data:
