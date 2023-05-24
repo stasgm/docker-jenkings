@@ -12,10 +12,11 @@ services:
       - jenkins-data:/etc/gitlab
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
-      jenkins-net:      
+      jenkins-net:
 
 volumes:
   jenkins-data:
     name: jenkins-data
 networks:
   jenkins-net:
+    name: jenkins-net
