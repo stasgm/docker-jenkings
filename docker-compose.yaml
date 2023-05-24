@@ -6,7 +6,7 @@ services:
     ports:
       - '22:22'
     env_file:
-      - .env  
+      - .env
     image: 'jenkins/ssh-agent:alpine'
     networks:
       jenkins-net:
