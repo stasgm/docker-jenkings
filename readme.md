@@ -17,7 +17,7 @@
   
 ### Steps
 
-  1. Clone a git repo: <https://github.com/stasgm/docker-jenkings>
+  1. Clone a git repo: <https://github.com/stasgm/docker-jenkins>
   2. Generate ssh
      * In a terminal window run the command: `ssh-keygen -f ~/.ssh/jenkins_agent_key`
      * Provide a passphrase to use with the key (it can be empty)
