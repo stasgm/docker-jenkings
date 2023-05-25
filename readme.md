@@ -50,7 +50,7 @@
      * id: jenkins
      * description: The jenkins ssh key
      * username: jenkins
-     * Private Key: select Enter directly and press the Add button to insert the content of your private key file at ~/.ssh/jenkins_agent_key
+     * Private Key: select Enter directly and press the Add button to insert the content of your private key file at **~/.ssh/jenkins_agent_key**
      * Passphrase: fill your passphrase used to generate the SSH key pair (leave empty if you didn’t use one at the previous step)
 
 ---
