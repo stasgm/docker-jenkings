@@ -10,14 +10,14 @@ services:
       - 22:22
     env_file:
       - .env
-    image: jenkins/ssh-agent:alpine
+    image: jenkins/ssh-agent:5.2.0
     networks:
       jenkins-net:
         aliases:
           - docker
 
   jenkins:
-    image: jenkins/jenkins:lts
+    image: jenkins/jenkins:lts    
     container_name: jenkins
     privileged: true
     user: root

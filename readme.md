@@ -68,7 +68,8 @@
        * Credentials; (e.g.: jenkins)
        * Host Key verification Strategy; (e.g.: Manually trusted key verification …​ )
   5. Press the Save button and the agent-1 will be registered, but offline for the time being. Click on it.
-  6. Open the Build-in node configuration <http://localhost:8080/manage/computer/(built-in)/configure> and set the Number of executors to 1
+  6. You may need to click on the trust ssh menu item to start your agent for the first time.
+  7. Open the Build-in node configuration <http://localhost:8080/manage/computer/(built-in)/configure> and set the Number of executors to 0 (in order to disable it)
 
 ---
 
