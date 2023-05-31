@@ -1,5 +1,9 @@
 # Jenkins setup
 
+## Before you start
+
+This instruction uses Linux OS commands, for other OS please google "how to generate ssh..." and where is the .ssh folder.
+
 ## Install Docker
 
 ### Links
