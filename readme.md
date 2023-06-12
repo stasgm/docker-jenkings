@@ -90,3 +90,4 @@ This instruction uses Linux OS commands, for other OS please google "how to gene
   1. Open <http://localhost:8080/manage/pluginManager/available> and Install NodeJS Plugin
   2. Go to <http://localhost:8080/manage/configureTools> and scroll down to NodeJS settings
   3. Press the **Add NodeJS** button, select the required NodeJS version and press the **Save** button
+  4. Type yarn in **Global npm packages to install** to install Yarn
