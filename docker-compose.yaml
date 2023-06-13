@@ -10,20 +10,23 @@ services:
       - 22:22
     env_file:
       - .env
-    image: jenkins/ssh-agent:5.2.0
+    build: 
+      context: .
+      dockerfile: Dockerfile.ssh-agent
+    # image: jenkins/ssh-agent:latest
     networks:
       jenkins-net:
         aliases:
           - docker
 
   jenkins:
-    image: jenkins/jenkins:lts
+    image: jenkins/jenkins:latest
     container_name: jenkins
     privileged: true
     user: root
     restart: always
     ports:
-      - 8080:8080
+      - 8081:8080
       - 50000:50000
     env_file:
       - .env
