@@ -9,7 +9,7 @@ pipeline {
 			steps {
 					cleanWs()
 					echo "Building ${env.JOB_NAME}..."
-					sh 'git clone https://github.com/stasgm/nestjs-menu.git .'
+					git url: 'https://github.com/stasgm/nestjs-menu.git'
 			}
 		}
 		stage('Install dependencies') {
