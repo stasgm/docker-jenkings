@@ -1,11 +1,15 @@
 pipeline {
 	agent any
-
+	options {
+		// This is required if you want to clean before build
+		skipDefaultCheckout(true)
+	}
 	stages {
-		stage('Cloning our Git') {
+		stage('Cloning git repo') {
 			steps {
-			    sh 'git clone https://github.com/stasgm/nestjs-menu.git'
-				sh 'cd nestjs-menu'
+					cleanWs()
+					echo "Building ${env.JOB_NAME}..."
+					sh 'git clone https://github.com/stasgm/nestjs-menu.git .'
 			}
 		}
 		stage('Install dependencies') {
@@ -21,6 +25,16 @@ pipeline {
 		stage('Run unit tests') {
 			steps {
 				sh 'yarn t-env:test'
+			}
+		}
+		stage('Run integration tests') {
+			steps {
+				sh 'yarn t-env:test:int'
+			}
+		}
+		stage('Run e2e tests') {
+			steps {
+				sh 'yarn t-env:test:e2e'
 			}
 		}
 	}
