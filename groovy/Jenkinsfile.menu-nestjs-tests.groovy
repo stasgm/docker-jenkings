@@ -24,7 +24,7 @@ pipeline {
 		}
 		stage('Run unit tests') {
 			steps {
-				sh 'yarn t-env:test'
+				sh 'yarn t-env:test:ci:cov'
 			}
 		}
 		stage('Run integration tests') {
