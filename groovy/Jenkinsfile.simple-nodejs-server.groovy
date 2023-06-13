@@ -8,7 +8,8 @@ pipeline {
 	stages {
 		stage('Cloning our Git') {
 			steps {
-				git url: "https://github.com/stasgm/docker-node-test1.git"
+				git url: "https://github.com/stasgm/docker-node-test1.git",
+				credentialsId: 'github_creds'
 			}
 		}
 		stage('Build') {
