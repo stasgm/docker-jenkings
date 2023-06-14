@@ -16,15 +16,19 @@ pipeline {
 			}
 		}
 		stage('Build') {
-			steps{
-				dockerImage = docker.build 'stanislau2020/nestjs-menu:latest'
+			steps {
+				script {
+					dockerImage = docker.build 'stanislau2020/nestjs-menu:latest'
+				}
 				// sh 'docker build . -t stanislau2020/nestjs-menu:latest'
 			}
 		}
 		stage('Login') {
 			steps {
-				docker.withRegistry( '', 'dockerhub-cred' ) {
-					dockerImage.push()
+				script {
+					docker.withRegistry( '', 'dockerhub-cred' ) {
+						dockerImage.push()
+					}
 				}
 				// sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 			}
