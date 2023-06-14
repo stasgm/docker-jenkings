@@ -14,6 +14,7 @@ pipeline {
 		}
 		stage('Install dependencies') {
 			steps {
+				sh 'nvm use'
 				sh 'yarn'
 			}
 		}
