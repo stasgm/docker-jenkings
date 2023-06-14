@@ -5,6 +5,7 @@ pipeline {
 		buildDiscarder(logRotator(numToKeepStr: '5'))
 	}
 	environment {
+		dockerImage = ""
 		DOCKERHUB_CREDENTIALS = credentials('dockerhub-cred')
 	}
 	stages {
@@ -16,14 +17,17 @@ pipeline {
 		}
 		stage('Build') {
 			steps{
-				sh 'docker build . -t stanislau2020/nestjs-menu:latest'
+				dockerImage = docker.build 'stanislau2020/nestjs-menu:latest'
+				// sh 'docker build . -t stanislau2020/nestjs-menu:latest'
 			}
 		}
 		stage('Login') {
-      steps {
-        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-      }
-    }
+			steps {
+				docker.withRegistry( '', 'dockerhub-cred' ) {
+				dockerImage.push()
+				// sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
 		stage('Push'){
 			steps{
 				sh 'docker push stanislau2020/nestjs-menu:latest'
