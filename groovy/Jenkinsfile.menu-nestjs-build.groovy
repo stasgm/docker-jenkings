@@ -17,9 +17,6 @@ pipeline {
 		}
 		stage('Build') {
 			steps {
-				// script {
-				// 	dockerImage = docker.build 'stanislau2020/nestjs-menu:latest'
-				// }
 				sh 'docker build . -t stanislau2020/nestjs-menu:latest'
 			}
 		}
