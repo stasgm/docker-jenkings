@@ -11,26 +11,26 @@ pipeline {
 	stages {
 		stage('Cloning git repo') {
 			steps {
-					cleanWs()
-					git url: 'https://github.com/stasgm/nestjs-menu.git'
+				cleanWs()
+				git url: 'https://github.com/stasgm/nestjs-menu.git'
 			}
 		}
 		stage('Build') {
 			steps {
-				script {
-					dockerImage = docker.build 'stanislau2020/nestjs-menu:latest'
-				}
-				// sh 'docker build . -t stanislau2020/nestjs-menu:latest'
+				// script {
+				// 	dockerImage = docker.build 'stanislau2020/nestjs-menu:latest'
+				// }
+				sh 'docker build . -t stanislau2020/nestjs-menu:latest'
 			}
 		}
 		stage('Login') {
 			steps {
-				script {
-					docker.withRegistry( '', 'dockerhub-cred' ) {
-						dockerImage.push()
-					}
-				}
-				// sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+				// script {
+				// 	docker.withRegistry( '', 'dockerhub-cred' ) {
+				// 		dockerImage.push()
+				// 	}
+				// }
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
 			}
 		}
 		stage('Push'){
