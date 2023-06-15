@@ -14,8 +14,9 @@ pipeline {
 		}
 		stage('Install dependencies') {
 			steps {
-				sh 'npm version'
-				sh 'yarn'
+				sh './scripts/install.sh'
+				// sh 'npm version'
+				// sh 'yarn'
 			}
 		}
 		stage('Migrate and seed the database') {
