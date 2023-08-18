@@ -30,7 +30,7 @@ This instruction uses Linux OS commands, for other OS please google "how to gene
   4. Open **.env** and do the following:
      * Copy content of **~/.ssh/jenkins_agent_key.pub** to **JENKINS_AGENT_SSH_PUBKEY=** variable
      * Create a new local folder fo Jenkins data and the path to **LOCAL_JENKINS_DIR=** variable
-  5. Run the command: `docker-compose up -d`
+  5. Run the command: `docker compose up -d`
 
 ### Unlocking Jenkins
 
