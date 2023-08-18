@@ -34,7 +34,7 @@ This instruction uses Linux OS commands, for other OS please google "how to gene
 
 ### Unlocking Jenkins
 
-  1. Browse to <http://localhost:8080> and wait until the Unlock Jenkins page appears.
+  1. Browse to <http://localhost:8081> and wait until the Unlock Jenkins page appears.
   2. From the Jenkins console log output, copy the automatically-generated alphanumeric password (between the 2 sets of asterisks).
   3. On the Unlock Jenkins page, paste this password into the Administrator password field and click Continue.
 
@@ -48,7 +48,7 @@ This instruction uses Linux OS commands, for other OS please google "how to gene
 
 ### Steps
 
-  1. Browse to <http://localhost:8080/manage/credentials/store/system/domain/_/newCredentials>
+  1. Browse to <http://localhost:8081/manage/credentials/store/system/domain/_/newCredentials>
   2. Fill in the form:
      * Kind: SSH Username with private key;
      * id: jenkins
@@ -61,7 +61,7 @@ This instruction uses Linux OS commands, for other OS please google "how to gene
 
 ## Add a new node (Jenkins recommendation)
 
-  1. Browse to <http://localhost:8080/computer/>
+  1. Browse to <http://localhost:8081/computer/>
   2. Click the 'New node' button
   3. Fill the Node/agent name and select the type; (e.g. Name: agent-1, Type: Permanent Agent) click on the Create button
   4. Fill the form:
@@ -73,7 +73,7 @@ This instruction uses Linux OS commands, for other OS please google "how to gene
        * Host Key verification Strategy; (e.g.: Manually trusted key verification …​ )
   5. Press the Save button and the agent-1 will be registered, but offline for the time being. Click on it.
   6. You may need to click on the trust ssh menu item to start your agent for the first time.
-  7. Open the Build-in node configuration <http://localhost:8080/manage/computer/(built-in)/configure> and set the Number of executors to 0 (in order to disable it)
+  7. Open the Build-in node configuration <http://localhost:8081/manage/computer/(built-in)/configure> and set the Number of executors to 0 (in order to disable it)
 
 ---
 
@@ -87,7 +87,7 @@ This instruction uses Linux OS commands, for other OS please google "how to gene
 
 ### Steps
 
-  1. Open <http://localhost:8080/manage/pluginManager/available> and Install NodeJS Plugin
-  2. Go to <http://localhost:8080/manage/configureTools> and scroll down to NodeJS settings
+  1. Open <http://localhost:8081/manage/pluginManager/available> and Install NodeJS Plugin
+  2. Go to <http://localhost:8081/manage/configureTools> and scroll down to NodeJS settings
   3. Press the **Add NodeJS** button, select the required NodeJS version and press the **Save** button
   4. Type yarn in **Global npm packages to install** to install Yarn
