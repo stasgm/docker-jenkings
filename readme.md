@@ -35,7 +35,7 @@ This instruction uses Linux OS commands, for other OS please google "how to gene
 ### Unlocking Jenkins
 
   1. Browse to <http://localhost:8081> and wait until the Unlock Jenkins page appears.
-  2. From the Jenkins console log output, copy the automatically-generated alphanumeric password (between the 2 sets of asterisks).
+  2. From the Jenkins console log output (`docker logs <containter id>`), copy the automatically-generated alphanumeric password (between the 2 sets of asterisks).
   3. On the Unlock Jenkins page, paste this password into the Administrator password field and click Continue.
 
 ---
