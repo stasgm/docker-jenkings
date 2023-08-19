@@ -59,7 +59,12 @@ This instruction uses Linux OS commands, for other OS please google "how to gene
 
 ---
 
-## Add a new node (Jenkins recommendation)
+## Add a new node agent (Jenkins recommendation)
+
+### links 
+ * <https://devopscube.com/setup-slaves-on-jenkins-2>
+
+### steps
 
   1. Browse to <http://localhost:8081/computer/>
   2. Click the 'New node' button
