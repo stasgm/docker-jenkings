@@ -1,62 +1,13 @@
-Jenkins setup
+Docker-based agent
 ==============================
 
-## Before you start
-
-This instruction uses Linux OS commands, for other OS please google "`how to generate ssh...`" and where is the `.ssh` folder.
-
-## Install Docker
-
 ### Links
 
-* <https://docs.docker.com/engine/install/ubuntu/>
-* <https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04>
-
----
-
-## Install Jenkins
-
-### Links
-
-* <https://omarghader.github.io/jenkins-nodejs-configuration>
-* <https://www.cloudbees.com/blog/how-to-install-and-run-jenkins-with-docker-compose>
-* <https://devopscube.com/docker-containers-as-build-slaves-jenkins>
+* <https://devopscube.com/docker-containers-as-build-slaves-jenkins/>
+* <https://hub.docker.com/r/jenkins/ssh-agent>
 * <https://www.jenkins.io/doc/book/using/using-agents>
   
-### Steps
-
-  1. Clone this repo: <https://github.com/stasgm/docker-jenkins>
-
-  ```
-  $ git clone https://github.com/stasgm/docker-jenkins
-  ```
-
-  2. Generate ssh (in a terminal window run the command):
-
-  ```
-  $ ssh-keygen -f ~/.ssh/jenkins_agent_key
-  ```
-
-  3. Provide a passphrase to use with the key (it can be empty)
-  4. Inside cloned repo folder, copy and rename **.env.sample** to **.env**
-  3. Open for editing **.env** and do the following:
-     * Copy content of **~/.ssh/jenkins_agent_key.pub** to **JENKINS_AGENT_SSH_PUBKEY=** variable
-     * Create a new local folder fo Jenkins data and the path to **LOCAL_JENKINS_DIR=** variable
-  4. Run the command: `docker compose up -d`
-
-### Unlocking Jenkins
-
-  1. Browse to <http://localhost:8081> and wait until the Unlock Jenkins page appears.
-  2. From the Jenkins console log output (`docker logs <containter id>`), copy the automatically-generated alphanumeric password (between the 2 sets of asterisks).
-  3. On the Unlock Jenkins page, paste this password into the Administrator password field and click Continue.
-
----
-
 ## Add ssh
-
-### Links
-
-* <https://www.jenkins.io/doc/book/using/using-agents/>
 
 ### Steps
 

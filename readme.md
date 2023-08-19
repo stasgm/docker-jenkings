@@ -22,17 +22,17 @@ This instruction uses Linux OS commands, for other OS please google "`how to gen
     git clone https://github.com/stasgm/docker-jenkins
     ```
   
-2. Select Agent Jenkins (you can have multiple agents for different purposes)
+2. Select Jenkins Agent (you can have multiple agents for different purposes)
 
-   * [With ssh-agent](/guides/with-ssh-agent.md)
-   * [With ubuntu agent](/guides/with-ubuntu-agent.md)
-   * [With mac agent](/guides/with-mac-agent.md)
-   * [With windows agent](/guides/with-windows-agent.md)
+   * [docker-based agent](/guides/setup-docker-based-agent.md)
+   * [ubuntu agent](/guides/setup-ubuntu-agent.md)
+   * [mac agent](/guides/setup-mac-agent.md)
+   * [windows agent](/guides/setup-windows-agent.md)
 
 3. Inside cloned repo folder, copy and rename **.env.sample** to **.env**
 4. Open for editing **.env** and do the following:
-     * Copy content of **~/.ssh/jenkins_agent_key.pub** to **JENKINS_AGENT_SSH_PUBKEY=** variable
-     * Create a new local folder fo Jenkins data and the path to **LOCAL_JENKINS_DIR=** variable
+     * Copy content of **~/.ssh/jenkins_agent_key.pub** to **JENKINS_AGENT_SSH_PUBKEY=** variable (for running docker-based agent, you can skip it if you don't use a docker based agent)
+     * Create a new local folder fo Jenkins data and the path to **LOCAL_JENKINS_DIR=** variable (for storing jenkins data on your master server)
 5. Run the command: `docker compose up -d`
 
 6. Unlock Jenkins
