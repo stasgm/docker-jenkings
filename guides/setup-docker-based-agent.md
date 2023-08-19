@@ -1,4 +1,4 @@
-Docker-based agent
+Docker-based Jenkins Agent setup
 ==============================
 
 ### Links
@@ -6,6 +6,9 @@ Docker-based agent
 * <https://devopscube.com/docker-containers-as-build-slaves-jenkins/>
 * <https://hub.docker.com/r/jenkins/ssh-agent>
 * <https://www.jenkins.io/doc/book/using/using-agents>
+
+### Video instructions: 
+*  <https://www.youtube.com/watch?v=ymI02j-hqpU>
   
 ## Add ssh
 
